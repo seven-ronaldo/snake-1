@@ -105,3 +105,67 @@ void menu(){
 	}
 	
 }
+
+void initgame(){
+	system("cls");
+	s_e = 120-speed;
+	t = 0;
+	vx = 1;
+	vy = 0;
+	score = 0;
+	length = 10;
+	character[0] = 11510;
+	character[1] = 11410;
+	character[2] = 11310;
+	character[3] = 11210;
+	character[4] = 11110;
+	character[5] = 11010;
+	character[6] = 10910;
+	character[7] = 10810;
+	character[8] = 10710;
+	character[9] = 10610;
+	fruit = 15010;
+}
+void creatfruit(){
+	int notok = 1;
+	while(notok){
+		notok = 0;
+		fruit = 10000 + Random(1,77)*100 + Random(1,23);
+		int i = 0;
+		for(i;i<length;i++){
+		if(character[i]	== fruit){
+			notok = 1;
+		}
+		}
+	}
+}
+int getx(int a){
+	return (a-10000)/100;
+}
+int gety(int a){
+	return a%100;
+}
+void drawscore(){
+
+	gotoxy(79,3);
+ 	printf("  s");
+ 	gotoxy(79,4);
+ 	printf("  c");
+ 	gotoxy(79,5);
+ 	printf("  o");
+ 	gotoxy(79,6);
+ 	printf("  r");
+ 	gotoxy(79,7);
+ 	printf("  e");
+ 	
+ 	gotoxy(79,9); 
+ 	printf("0");
+ 	gotoxy(79,10); 
+ 	printf("0");
+ 	gotoxy(79,11);
+ 	printf("0");
+ 	gotoxy(79,12); 
+ 	printf("0");
+ 	gotoxy(79,13);
+ 	printf("0");
+}
