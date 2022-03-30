@@ -1,3 +1,120 @@
+#include <stdio.h>
+#include<windows.h>
+#include<conio.h>
+#include<string.h>
+#include<time.h>
+int character[1000];
+int length = 2;
+int fruit;
+int score;
+clock_t t;
+int s_e;
+int vx;
+int vy;
+int speed=50;
+enum state{
+	MENU = 0, INGAME, SETTING, GUIDING, INFORMATION, GAMEOVER
+} state;
+int Random(int a, int b)
+{
+   return a + rand()%(b-a+1);
+}
+
+void gotoxy(int x, int y)
+{
+    static HANDLE  h = NULL;
+    if(!h)
+        h = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD c = {x,y};
+    SetConsoleCursorPosition(h,c);
+}
+void SetColor(WORD color)
+{ 
+    HANDLE hConsoleOutput;
+    hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_SCREEN_BUFFER_INFO screen_buffer_info;
+    GetConsoleScreenBufferInfo(hConsoleOutput, &screen_buffer_info);
+    WORD wAttributes = screen_buffer_info.wAttributes;
+    color &= 0x000f;
+    wAttributes &= 0xfff0; wAttributes |= color;
+    SetConsoleTextAttribute(hConsoleOutput, wAttributes);
+}
+void information(){
+	system("cls");
+	SetColor(4);
+	gotoxy(10,8);
+	printf("moi su gop y cua ban la mon qua voi chung toi: 6251071084@st.utc2.edu.vn");
+		gotoxy(8,9);
+		printf("hoac lien he fb: https://www.facebook.com/is.nguyen.967");
+		gotoxy(3,10);
+		printf("an phim bat ki de tro lai menu");
+		gotoxy(27,11);
+		SetColor(14);
+		printf("----Nhom 4 nguoi Hao Hung Tai Tin----");
+		getchar();
+		state = MENU;
+}
+void setting(){
+  system("cls");
+  gotoxy(0,9);
+  printf("an cac phim up down tren ban phim de tang giam toc do, nhan enter de tro ve menu");
+  gotoxy(30,11);
+  printf("toc do hien tai : %d",speed);
+  int key;
+  while(state==SETTING){
+  	if(kbhit()){
+  		key = getch();
+  		switch (key){
+  			//nut trai
+  			case 75 :
+  				if(speed>1){
+				  
+  				speed -=1;
+  				gotoxy(30,11);
+                printf("toc do hien tai : %d   ",speed);
+                }
+  				break;
+  				//nut phai
+  				case  77 :
+  					if(speed<100){
+					  
+  					speed+=1;
+  					gotoxy(30,11);
+                    printf("toc do hien tai : %d   ",speed);
+                    }
+  					break;
+  					case 13 :
+  						state = MENU;
+  						break;
+		  }
+	  }
+  }	
+}
+void vekhung(){
+	
+	int i = 0;
+	int j = 0;
+	SetColor(3);
+	for(i;i<79;i++){
+		printf("#");
+	}
+	printf("\n");
+    i = 0;
+	for(i;i<23;i++){
+	
+	for(j;j<79;j++){
+		if(j==0)printf("#");
+		else if(j==78) printf("#\n");
+		else printf(" ");
+	}
+	j=0;
+} 
+i = 0;
+for(i;i<79;i++){
+		printf("#");
+	}
+}
+
 
 void gameover(){	
     SetColor(4);
