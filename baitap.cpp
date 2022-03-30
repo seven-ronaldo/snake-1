@@ -1,6 +1,6 @@
 #include<stdio.h>//tin hung tai
 #include<string.h>
-typedef struct{
+typedef struct{ 
 	int ngay,thang,nam;
 }date;
 void NhapNgaySinh(date &ngaysinh)
