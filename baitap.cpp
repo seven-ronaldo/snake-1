@@ -43,16 +43,14 @@ void information(){
 	system("cls");
 	SetColor(4);
 	gotoxy(10,8);
-	printf("moi su gop y cua ban la mon qua voi chung toi: 6251071084@st.utc2.edu.vn");
-		gotoxy(8,9);
-		printf("hoac lien he fb: https://www.facebook.com/is.nguyen.967");
-		gotoxy(3,10);
-		printf("an phim bat ki de tro lai menu");
-		gotoxy(27,11);
-		SetColor(14);
-		printf("----Nhom 4 nguoi Hao Hung Tai Tin----");
-		getchar();
-		state = MENU;
+	printf("moi su gop y cua ban la mon qua voi nhom toi: 6251071084@st.utc2.edu.vn");
+	gotoxy(3,10);
+	printf("an phim bat ki de tro lai menu");
+	gotoxy(27,11);
+	SetColor(14);
+	printf("----Nhom 4 nguoi Hao Hung Tai Tin----");
+	getchar();
+	state = MENU;
 }
 void setting(){
   system("cls");
@@ -67,86 +65,71 @@ void setting(){
   		switch (key){
   			//nut trai
   			case 75 :
-  				if(speed>1){
-				  
-  				speed -=1;
-  				gotoxy(30,11);
-                printf("toc do hien tai : %d   ",speed);
-                }
-  				break;
-  				//nut phai
-  				case  77 :
-  					if(speed<100){
-					  
-  					speed+=1;
-  					gotoxy(30,11);
-                    printf("toc do hien tai : %d   ",speed);
-                    }
-  					break;
-  					case 13 :
-  						state = MENU;
-  						break;
-		  }
+  			if(speed>1){ 
+  			speed -=1;
+  			gotoxy(30,11);
+                        printf("toc do hien tai : %d   ",speed);}
+  			break;
+  			//nut phai
+  			case  77 :
+  			if(speed<100){
+  			speed+=1;
+  			gotoxy(30,11);
+                        printf("toc do hien tai : %d   ",speed);}
+  			break;
+  			case 13 :
+  			state = MENU;
+  			break;}
 	  }
-  }	
+      }	
 }
 void vekhung(){
-	
 	int i = 0;
 	int j = 0;
 	SetColor(3);
 	for(i;i<79;i++){
-		printf("#");
-	}
+		printf("#");}
 	printf("\n");
-    i = 0;
+        i = 0;
 	for(i;i<23;i++){
-	
-	for(j;j<79;j++){
+	   for(j;j<79;j++){
 		if(j==0)printf("#");
 		else if(j==78) printf("#\n");
-		else printf(" ");
-	}
-	j=0;
-} 
-i = 0;
-for(i;i<79;i++){
-		printf("#");
-	}
+		else printf(" ");}
+	    j=0;} 
+         i = 0;
+         for(i;i<79;i++){
+		printf("#");}
 }
-
-
 void gameover(){	
     SetColor(4);
     system("cls");
-	gotoxy(30,9);
-	printf("....Game over....");
-	gotoxy(15,11);
-	printf("Choi ngu duoc co %d diem, an phim bat ki de ve menu",score);
-	gotoxy(27,13);
-	printf("|---- anh's thanh ----|");
-	getchar();
-	state = MENU;	
+    gotoxy(30,9);
+    printf("....GAME OVER....");
+    gotoxy(15,11);
+    printf("Chuc mung ban duoc co %d diem, an phim bat ki de ve menu",score);
+    getchar();
+    state = MENU;	
 }
 void menu(){
 	SetColor(14);
 	system("cls");
-    gotoxy(25,3);
+        gotoxy(25,3);
 	printf("Game ran an moi ");
 	gotoxy(30,5);
 	SetColor(4);
-	printf("1. vao game");
+	printf("1.Vao Game");
 	gotoxy(30,6);
-	printf("2. tuy chinh");
+	printf("2.Tuy Chinh");
 	gotoxy(30,7);
-	printf("3. thong tin");
+	printf("3.Thong Tin");
 	int choice = 1;
 	int oldChoice = 1;
 	int next = 1;
 	int key;
 	SetColor(14);
 	gotoxy(29,5);
-				printf("%c",16);
+	printf("%c",16);
 	while(state==MENU){
 		if(kbhit()){
 			key = getch();
@@ -158,71 +141,55 @@ void menu(){
 			choice --;
 			if(choice == 0) choice = 3;
 			}
-		switch (choice) {
+		switch (choice){
 			case 1 :
 				if(oldChoice!=choice){
-				
-				gotoxy(29,6);
-				printf(" ");
-				gotoxy(29,7);
-				printf(" ");
-				oldChoice = 1;
-				
-				gotoxy(29,5);
-				SetColor(14);
-				printf("%c",16);
-				}
+				 gotoxy(29,6);
+				 printf(" ");
+				 gotoxy(29,7);
+				 printf(" ");
+				 oldChoice = 1;
+				 gotoxy(29,5);
+				 SetColor(14);
+				 printf("%c",16);}
 				break;
 			case 2 :
 				if(oldChoice!=choice){
-			
-				gotoxy(29,5);
-				printf(" ");
-				gotoxy(29,7);
-				printf(" ");
-		        gotoxy(29,6);
-		        SetColor(14);
-				printf("%c",16);
-				oldChoice = 2;
-				}
+				 gotoxy(29,5);
+				 printf(" ");
+				 gotoxy(29,7);
+				 printf(" ");
+		                 gotoxy(29,6);
+		                 SetColor(14);
+				 printf("%c",16);
+				 oldChoice = 2;}
 				break;
 			case 3 :
 				if(oldChoice!=choice){
-				
-				
-				gotoxy(29,6);
-				printf(" ");
-				gotoxy(29,5);
-				printf(" ");
-				gotoxy(29,7);
-				SetColor(14);
-				printf("%c",16);
-				
-				oldChoice = 3;
-				}
-				break;
-		}
+				 gotoxy(29,6);
+				 printf(" ");
+				 gotoxy(29,5);
+				 printf(" ");
+				 gotoxy(29,7);
+				 SetColor(14);
+				 printf("%c",16);	
+				 oldChoice = 3;}
+				 break;}
 		if(key==13){
-		switch (choice){
-		case 1:			
+		 switch (choice){
+		      case 1:			
 			state = INGAME;
 			break;
-			case 2:
-				state = SETTING;
-				break;
-			case 3 :
-				state = INFORMATION;
-				break;
-				
-		}
-		}
-		
-	}
-	
-	}
-	
+		      case 2:
+			state = SETTING;
+			break;
+		      case 3 :
+		        state = INFORMATION;
+			break;	}
+		  }
+	      }
+	}	
 }
-
 void initgame(){
 	system("cls");
 	s_e = 120-speed;
@@ -251,8 +218,7 @@ void creatfruit(){
 		int i = 0;
 		for(i;i<length;i++){
 		if(character[i]	== fruit){
-			notok = 1;
-		}
+			notok = 1;}
 		}
 	}
 }
@@ -263,7 +229,6 @@ int gety(int a){
 	return a%100;
 }
 void drawscore(){
-
 	gotoxy(79,3);
  	printf("  s");
  	gotoxy(79,4);
@@ -274,7 +239,6 @@ void drawscore(){
  	printf("  r");
  	gotoxy(79,7);
  	printf("  e");
- 	
  	gotoxy(79,9); 
  	printf("0");
  	gotoxy(79,10); 
@@ -324,40 +288,40 @@ void ingame(){
 				//nut len
 				case 72:
 					if(vy == 0){
-						vx = 0;
-						vy = -1;}
+					vx = 0;
+					vy = -1;}
 					break;
 					//nut xuong
 				case 80:
 					if(vy == 0){
-						vx = 0;
-						vy = 1;}
+					vx = 0;
+					vy = 1;}
 					break;
 					//nut trai
 				case 75:
 					if(vx == 0){
-						vy = 0;
-						vx = -1;}
+					vy = 0;
+					vx = -1;}
 					break;
 					// nut phai
 				case 77:
 					if(vx == 0){
-						vy = 0;
-						vx = 1;}
-					break;		}						     
-	}	
+					vy = 0;
+					vx = 1;}
+					break;}						     
+}	
 	if((clock()-t)>=s_e){
-			if(character[length-1]!=0){			
+		   if(character[length-1]!=0){			
 			gotoxy(getx(character[length-1]),gety(character[length-1]));
 			printf(" ");}
 			i =length-1;
 			for(i;i>0;i--){
-			  character[i]=character[i-1];}
+			character[i]=character[i-1];}
 			SetColor(2);
 			gotoxy(getx(character[0]),gety(character[0]));
 			printf("o");
-		    character[0] += vx*100;
-		    character[0] += vy;	
+		        character[0] += vx*100;
+		        character[0] += vy;	
 		    if(character[0] == fruit){
 		    	length+= 1;
 		    	score += (speed/10 + 5);
@@ -365,7 +329,7 @@ void ingame(){
 		    	creatfruit();
 		    	SetColor(13);
 		    	gotoxy(getx(fruit),gety(fruit));
- 	            printf("O");}
+ 	                printf("O");}
 			if((vx>0)&&(getx(character[0])==78)){
 				character[0]-=7700;}    
 			if((vx<0)&&(getx(character[0])==0)){
@@ -383,12 +347,12 @@ void ingame(){
 					system("cls");					
 					state = GAMEOVER;}
 			}  
-		   t = clock();  		    
+		        t = clock();  		    
 		}	
 	}	
 }
 int main(){
-	state = MENU;
+    state = MENU;
     menu();
     while(1){
 	switch (state){
@@ -396,16 +360,16 @@ int main(){
 		     menu();
 		     break;
 		case INGAME :
-			ingame();
-			break;
+		     ingame();
+	             break;
 		case GAMEOVER : 
 		     gameover();
 		     break;
 		case INFORMATION :
-			 information();
-			 break;
+		     information();
+		     break;
 		case SETTING:
-			 setting();
-			 break;} 
+		     setting();
+		     break;} 
    }
 }
