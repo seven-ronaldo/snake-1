@@ -308,6 +308,20 @@ void inmap3(){
 				at[0]+=23;
 			}	
 }
+void inmap2(){
+	vekhung();
+	gotoxy(13,25);
+	for(int i=13;i<23;i++){
+		gotoxy(25,i);
+		printf("%c",219);
+		gotoxy(60,i);
+		printf(" %c",219);
+	}
+	for(int j=14;j<=70;j++){
+		gotoxy(j,8);
+		printf("%c",219);
+	}	
+}
 void initgame(){
 	system("cls");
 	a = 120-speed;
@@ -633,20 +647,7 @@ void ingame(){
 	}
 		}
 }
-void inmap2(){
-	vekhung();
-	gotoxy(13,25);
-	for(int i=13;i<23;i++){
-		gotoxy(25,i);
-		printf("%c",219);
-		gotoxy(60,i);
-		printf(" %c",219);
-	}
-	for(int j=14;j<=70;j++){
-		gotoxy(j,8);
-		printf("%c",219);
-	}	
-}
+
 int main(){
 	sv a;
     state = MENU;
@@ -675,4 +676,7 @@ int main(){
 			 } 
    }
 }
-//co dung
+//Phi Hùng: dòng 1->106
+//Anh Hào: dòng 107->264
+//Đức Tín:tạo map,chuyển map,ingame.
+//Hữu Tài:di chuyển con rắn,main,createfruit,hỗ trợ ingame
