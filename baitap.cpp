@@ -677,6 +677,6 @@ int main(){
    }
 }
 //Phi Hùng: dòng 1->106
-//Anh Hào: dòng 107->264
+//Anh Hào: dòng 107->264,hỗ trợ ingame
 //Đức Tín:tạo map,chuyển map,ingame.
 //Hữu Tài:di chuyển con rắn,main,createfruit,hỗ trợ ingame
